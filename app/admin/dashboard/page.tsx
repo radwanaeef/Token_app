@@ -48,8 +48,15 @@ export default function AdminDashboard() {
     loadData();
   };
 
+  const [nextPatientMsg, setNextPatientMsg] = useState('');
+
   const nextPatient = async () => {
-    await supabase.rpc('increment_token');
+    const { error } = await supabase.rpc('increment_token');
+    if (error) {
+      setNextPatientMsg(`Only ${bookings.length} patient${bookings.length === 1 ? '' : 's'} booked today — no more to call.`);
+      return;
+    }
+    setNextPatientMsg('');
     loadData();
   };
 
@@ -95,6 +102,9 @@ export default function AdminDashboard() {
         <button onClick={nextPatient} className="btn-primary">
           Next Patient →
         </button>
+        {nextPatientMsg && (
+          <p className="text-clinic-coral text-sm text-center">{nextPatientMsg}</p>
+        )}
       </div>
 
       <div className="card space-y-3">
