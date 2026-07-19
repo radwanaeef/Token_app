@@ -18,6 +18,9 @@ export default function Home() {
       <p className="text-center text-sm text-clinic-ink/50 px-2">
         Already booked? Check the number above from home — no need to wait at the clinic.
       </p>
+      <Link href="/admin/login" className="block text-center text-sm text-clinic-ink/40 pt-4">
+  Staff Login
+</Link>
     </main>
   );
 }
