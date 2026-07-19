@@ -14,6 +14,9 @@ export default function Home() {
       <Link href="/book" className="btn-primary block text-center">
         Book Today's Token
       </Link>
+      <Link href="/lookup" className="block text-center text-clinic-teal underline text-sm">
+  Already booked? Check your token
+</Link>
 
       <p className="text-center text-sm text-clinic-ink/50 px-2">
         Already booked? Check the number above from home — no need to wait at the clinic.
