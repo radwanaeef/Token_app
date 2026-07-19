@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 18px; /* larger base size for elderly/rural readability */
+}
+
+body {
+  @apply bg-clinic-bg text-clinic-ink font-body;
+}
+
+.btn-primary {
+  @apply w-full rounded-xl bg-clinic-teal text-white font-semibold py-4 text-lg
+         active:bg-clinic-tealDark transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-whatsapp {
+  @apply w-full rounded-xl bg-[#25D366] text-white font-semibold py-4 text-lg text-center
+         active:brightness-95 transition;
+}
+
+.input-field {
+  @apply w-full rounded-xl border-2 border-clinic-teal/20 bg-white px-4 py-3 text-lg
+         focus:outline-none focus:ring-4 focus:ring-clinic-teal/20 focus:border-clinic-teal;
+}
+
+.card {
+  @apply bg-clinic-card rounded-2xl shadow-sm p-6;
+}
+
+/* the token badge — the app's signature element: a coin standing in for the physical cardboard token */
+.token-badge {
+  @apply mx-auto flex items-center justify-center rounded-token
+         bg-clinic-teal text-white font-display shadow-lg;
+  width: 9rem;
+  height: 9rem;
+  font-size: 3.25rem;
+  border: 6px solid #ffffff;
+  box-shadow: 0 0 0 4px #0F5C5C33, 0 10px 25px -8px #0A3F3F55;
+}
