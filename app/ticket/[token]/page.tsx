@@ -8,12 +8,16 @@ export default function TicketPage() {
   const search = useSearchParams();
   const token = params.token as string;
   const name = search.get('name') ?? '';
-  const time = (search.get('time') ?? '').slice(0, 5);
+  const bookingDate = new Date().toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
 
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
   const ticketUrl = `${siteUrl}/`;
   const shareText = encodeURIComponent(
-    `Sunrise Clinic token booked ✅\nName: ${name}\nToken No: ${token}\nEstimated time: ${time}\nTrack live queue: ${ticketUrl}`
+    `Sunrise Clinic token booked ✅\nName: ${name}\nToken No: ${token}\nValid for: ${bookingDate}\nTrack live queue: ${ticketUrl}`
   );
 
   return (
