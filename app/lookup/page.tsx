@@ -49,7 +49,7 @@ export default function LookupPage() {
             <div className="token-badge">{result.token_number}</div>
             <p className="font-semibold">{result.patient_name}</p>
             <p className="text-clinic-teal">
-              Estimated time: {result.estimated_time?.slice(0, 5)}
+              Valid for: {new Date(result.booking_date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
             </p>
           </div>
         )}
