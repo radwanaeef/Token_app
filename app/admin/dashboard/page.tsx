@@ -16,6 +16,7 @@ type Settings = {
   is_booking_open: boolean;
   current_token: number;
   max_tokens: number;
+  booking_date: string;
 };
 
 export default function AdminDashboard() {
@@ -30,7 +31,7 @@ export default function AdminDashboard() {
     const { data: b } = await supabase
       .from('bookings')
       .select('*')
-      .eq('booking_date', new Date().toISOString().slice(0, 10))
+      .eq('booking_date', (s as Settings).booking_date)
       .order('token_number');
     setBookings((b as Booking[]) ?? []);
   };
