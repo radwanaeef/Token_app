@@ -47,7 +47,6 @@ export default function BookPage() {
     const params = new URLSearchParams({
       name: name.trim(),
       phone: phone.trim(),
-      time: row.estimated_time,
     });
     router.push(`/ticket/${row.token_number}?${params.toString()}`);
   };
