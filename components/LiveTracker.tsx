@@ -7,8 +7,6 @@ type Settings = {
   is_booking_open: boolean;
   max_tokens: number;
   current_token: number;
-  consult_start: string;
-  consult_end: string;
 };
 
 export default function LiveTracker() {
@@ -50,9 +48,7 @@ export default function LiveTracker() {
     <div className="card text-center space-y-3">
       <p className="text-sm uppercase tracking-wide text-clinic-teal/70">Now serving</p>
       <div className="token-badge">{settings.current_token || '—'}</div>
-      <p className="text-sm text-clinic-ink/70">
-        Consulting {settings.consult_start.slice(0, 5)} – {settings.consult_end.slice(0, 5)}
-      </p>
+      
       <div className="pt-2 border-t border-clinic-teal/10">
         {settings.is_booking_open ? (
           <p className="text-clinic-teal font-medium">
