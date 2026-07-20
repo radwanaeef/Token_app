@@ -33,8 +33,8 @@ export default function TicketPage() {
           <p className="text-lg font-semibold">{name}</p>
         </div>
         <div>
-          <p className="text-clinic-ink/60 text-sm">Estimated Consultation Time</p>
-          <p className="text-lg font-semibold text-clinic-teal">{time || '—'}</p>
+          <p className="text-clinic-ink/60 text-sm">Valid For</p>
+          <p className="text-lg font-semibold text-clinic-teal">{bookingDate}</p>
         </div>
         <p className="text-sm text-clinic-ink/50">
           Keep this token. You don't need to wait at the clinic — check the live queue from home.
